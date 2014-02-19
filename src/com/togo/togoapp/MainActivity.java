@@ -28,14 +28,12 @@ import android.widget.TabHost.TabContentFactory;
 
 public class MainActivity extends FragmentActivity implements TabHost.OnTabChangeListener  {
 	protected boolean loggedOn = true;
-	private boolean debug = true;
+	private boolean debug = false;
 	
 	 private TabHost mTabHost;
      private HashMap<String, TabInfo> mapTabInfo = new HashMap<String, MainActivity.TabInfo>();
      private TabInfo mLastTab = null;
-     /**
-      * 
-      */
+     
      private class TabInfo {
               private String tag;
       private Class<?> clss;
@@ -48,17 +46,12 @@ public class MainActivity extends FragmentActivity implements TabHost.OnTabChang
       }
              
      }
-     /**
-      * 
-      *
-      */
+     
      class TabFactory implements TabContentFactory {
 
              private final Context mContext;
 
-         /**
-          * @param context
-          */
+         
          public TabFactory(Context context) {
              mContext = context;
          }
@@ -94,13 +87,6 @@ public class MainActivity extends FragmentActivity implements TabHost.OnTabChang
      mTabHost.setOnTabChangedListener(this);
      }
      
-     /**
-      * @param activity
-      * @param tabHost
-      * @param tabSpec
-      * @param clss
-      * @param args
-      */
      private static void addTab(MainActivity activity, TabHost tabHost, TabHost.TabSpec tabSpec, TabInfo tabInfo) {
              // Attach a Tab view factory to the spec
              tabSpec.setContent((TabContentFactory) activity.new TabFactory(activity));
@@ -120,9 +106,6 @@ public class MainActivity extends FragmentActivity implements TabHost.OnTabChang
      tabHost.addTab(tabSpec);
      }
 
-     /** (non-Javadoc)
-      * @see android.widget.TabHost.OnTabChangeListener#onTabChanged(java.lang.String)
-      */
      public void onTabChanged(String tag) {
              TabInfo newTab = this.mapTabInfo.get(tag);
              if (mLastTab != newTab) {
@@ -147,8 +130,6 @@ public class MainActivity extends FragmentActivity implements TabHost.OnTabChang
          this.getSupportFragmentManager().executePendingTransactions();
              }
  }
-	@Override
-	
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -212,7 +193,7 @@ public class MainActivity extends FragmentActivity implements TabHost.OnTabChang
 	public void redirectLogon(){
 		loggedOn = false;
 		try{
-		Intent redirectLogon = new Intent(getApplicationContext(), LoginActivity.class);
+		Intent redirectLogon = new Intent(getApplicationContext(), StartActivity.class);
 		startActivity(redirectLogon);
 		//finish();
 		loggedOn = true;

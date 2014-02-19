@@ -1,0 +1,74 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".SignUpActivity" >
+	
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+	     <EditText android:id="@+id/signup_firstname_field"
+	    	android:layout_weight="1"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:paddingTop="10dp"
+	        android:paddingBottom="10dp"
+	        android:hint="@string/signup_firstname_hint" />
+	     
+	      <EditText android:id="@+id/signup_lastname_field"
+	        android:layout_weight="1"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:paddingTop="10dp"
+	        android:paddingBottom="10dp"
+	        android:hint="@string/signup_lastname_hint" />	
+	 </LinearLayout>
+	        
+     <EditText android:id="@+id/signup_username_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:hint="@string/signup_username_hint" />
+     
+  	 <EditText android:id="@+id/signup_password_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:inputType="textPassword"
+        android:hint="@string/signup_password_hint" />
+  	 
+	 <EditText android:id="@+id/signup_password_confirm_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:inputType="textPassword"
+        android:hint="@string/signup_password_confirm_hint" />
+
+	 <EditText
+	     android:id="@+id/signup_phone_field"
+	     android:layout_width="match_parent"
+	     android:layout_height="wrap_content"
+	     android:ems="10"
+	     android:inputType="phone"
+	     android:hint="@string/signup_phone_hint"/>
+
+	 <Button
+	     android:id="@+id/signup_submit_button"
+	     android:layout_width="wrap_content"
+	     android:layout_height="wrap_content"
+	     android:layout_gravity="right"
+	     android:text="@string/signup_button_text" />
+
+</LinearLayout>
